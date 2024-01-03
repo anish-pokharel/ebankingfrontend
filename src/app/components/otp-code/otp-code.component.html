@@ -1,0 +1,30 @@
+<p>otp-code works!</p>
+
+<div class="container">
+
+    <div class="row border border-primary">
+        <div class="col-sm-6">
+            <div>
+
+                <img src="../../../../assets/images/mobilebamking.png" alt=""
+                    class="img-fluid objectfit-contain border rounded overflow-hidden">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class=" d-flex justify-content-end">
+                <span>SUAN</span>
+            </div>
+            <div class="my-4">
+                <h1>OTP CODE  </h1>
+         
+                    <div class="my-3">
+
+                        <label   for="Otp Code">Phone Number</label> <br>
+                        <input [(ngModel)]="otpCode" type="text"  placeholder="OTP Code">
+                    </div>
+                    <button type="submit" (click)="verifyButton()">Verify</button>
+            </div>
+        </div>
+    </div>
+
+</div>
