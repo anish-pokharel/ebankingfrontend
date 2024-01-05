@@ -1,34 +1,40 @@
 <div class="container">
-
-    <div class="row border border-primary">
-        <div class="col-sm-6">
-            <div>
-
-                <img src="../../../../assets/images/mobilebamking.png" alt=""
-                    class="img-fluid objectfit-contain border rounded overflow-hidden">
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class=" d-flex justify-content-end">
-                <span>SUAN</span>
-            </div>
-            <div class="my-4">
-                <h1>login form </h1>
-                <form [formGroup]="userForm"   (submit)="loginButton()">
-                    <div class="my-3">
-
-                        <label for="phoneNumber">Phone Number</label> <br>
-                        <input type="text" formControlName="phoneNumber" placeholder="+97798XXXXXXXX">
-                    </div>
-                    <div class="my-3">
-
-                        <label for="password">Password</label><br>
-                        <input type="password" formControlName="password" placeholder="*********">
-                    </div>
-                    <button type="submit">Login</button>
-                </form>
-            </div>
-        </div>
+  <div class="row border border-primary">
+    <div class="col-sm-6">
+      <div>
+        <img
+          src="../../../../assets/images/mobilebamking.png"
+          alt=""
+          class="img-fluid objectfit-contain border rounded overflow-hidden"
+        />
+      </div>
     </div>
-
+    <div class="col-sm-6">
+      <div class="d-flex justify-content-end">
+        <span>SUAN</span>
+      </div>
+      <div class="my-4">
+        <h1>login form</h1>
+        <form [formGroup]="userForm" (submit)="loginButton()">
+          <div class="my-3">
+            <label for="phoneNumber">Phone Number hai</label> <br />
+            <input
+              type="text"
+              formControlName="phoneNumber"
+              placeholder="+97798XXXXXXXX"
+            />
+          </div>
+          <div class="my-3">
+            <label for="password">Password</label><br />
+            <input
+              type="password"
+              formControlName="password"
+              placeholder="*********"
+            />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
