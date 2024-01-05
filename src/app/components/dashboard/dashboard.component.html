@@ -84,8 +84,8 @@
 </div> -->
 
 
-<nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" >Company name</a>
+<!-- <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0">SUAN</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -94,64 +94,74 @@
         <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-                <a class="nav-link" >Sign out</a>
+                <a class="nav-link">Sign out</a>
             </li>
         </ul>
     </div>
-</nav>
+</nav> -->
+<nav class="navbar navbar-dark bg-dark text-light d-flex justify-content-between text-center align-center">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0">SUAN</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0">Sign Out</a>
+    
+</nav> 
 <div class="container-fluid">
-	<div class="row">
-		<nav class="col-md-2 d-none d-md-block sidebar">
-			<div class="sidebar-sticky">
-				<ul class="nav flex-column">
-					<li class="nav-item">
-						<a class="nav-link active " (click)="showSection('dashboard')" >
-                  <i class="zmdi zmdi-widgets"></i>
-                  Dashboard <span class="sr-only">(current)</span>
-                </a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" (click)="showSection('transfer')">
-                  <i class="zmdi zmdi-file-text"></i>
-                  transfer
-                </a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" (click)="showSection('transactions')">
-                  <i class="zmdi zmdi-shopping-cart"></i>
-                  transactions
-                </a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" (click)="showSection('accounts')">
-                  <i class="zmdi zmdi-accounts"></i>
-                  accounts
-                </a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link"(click)="showSection('investment')" >
-                  <i class="zmdi zmdi-chart"></i>
-                  investment
-                </a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link"(click)="showSection('setting')" >
-                  <i class="zmdi zmdi-chart"></i>
-                  setting
-                </a>
-					</li>
-					<!-- <li class="nav-item">
+    <div class="row">
+
+        <nav class="col-md-2 d-none d-md-block sidebar ">
+            <div class="sidebar-sticky">
+                <div class="d-flex">
+
+                    <ul class="nav flex-column">
+                        <!-- <a class="navbar-brand col-sm-3 col-md-2 mr-0">SUAN</a> -->
+
+                        <li class="nav-item">
+                            <a class="nav-link active text-dark" (click)="showSection('dashboard')">
+                                <i class="fa-solid fa-house-chimney"></i> Dashboard <span
+                                    class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark " (click)="showSection('transfer')">
+                                <i class="fa-regular fa-money-bill-transfer"></i> Transfer
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark " (click)="showSection('transactions')">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                Transactions
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark " (click)="showSection('accounts')">
+                                <i class="fa-regular fa-credit-card"></i>
+                                Accounts
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark " (click)="showSection('investment')">
+                                <i class="fa-solid fa-money-bill-trend-up"></i>                                Investment
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark " (click)="showSection('setting')">
+                                <i class="fa-solid fa-gear"></i>                                Setting
+                            </a>
+                        </li>
+
+                        <!-- <li class="nav-item">
 						<a class="nav-link" >
                   <i class="zmdi zmdi-layers"></i>
                   Logout
                 </a>
 					</li> -->
-				</ul>
-			</div>
-		</nav>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 my-3">
-			<div class="card-list">
-				<div class="row">
+            <div class="card-list">
+                <div class="row">
                     <div *ngIf="currentSection === 'dashboard'">
                         <app-dashboard-page></app-dashboard-page>
                     </div>
@@ -159,7 +169,7 @@
                         <app-transfer></app-transfer>
                     </div>
                     <div *ngIf="currentSection === 'transactions'">
-                        <app-settings></app-settings>
+                        <app-transactions></app-transactions>
                     </div>
                     <div *ngIf="currentSection === 'accounts'">
                         <app-accountsandchartts></app-accountsandchartts>
@@ -175,5 +185,5 @@
                     <div *ngIf="currentSection === 'logout'">
                     </div>
                 </div>
-			</div>
+            </div>
         </main>

@@ -24,16 +24,19 @@ if(this.formData.valid){
 }
 else{}
 }
-
+shareIban(){
+  alert('hello')
+}
 transferMoney(){
   this.formData=this.fb.group({
     beneficiary:['',Validators.required],
     amount:['',Validators.required],
     date:['',Validators.required],
-    transferpurpose:['',Validators.required],
-    beneficiarymname:['',Validators.required],
-    beneficiaryemail:['',Validators.required],
-    beneficiaryinfo:['',Validators.required]
+    transferPurpose:['',Validators.required],
+    beneficiaryName:['',Validators.required],
+    beneficiaryEmail:['',Validators.required],
+    payersReference:['',Validators.required],
+    beneficiaryInfo:['',Validators.required]
 
   })
 }

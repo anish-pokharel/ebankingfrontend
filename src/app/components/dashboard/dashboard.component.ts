@@ -15,7 +15,7 @@ import { TransactionsComponent } from '../dashboard-pages/transactions/transacti
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent implements OnInit {
-currentSection:string='dashboard';
+currentSection:string='transactions';
 
   constructor(){}
   ngOnInit(): void {

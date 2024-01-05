@@ -1,63 +1,156 @@
 <div class="container">
-    <h4>Transfer</h4>
-    <div class="row">
+    <h4>Transfer </h4>
+    <div class="row my-4">
+      
         <div class="col-lg-3">
+            <h5>Select payer</h5>
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <span>Total Balance</span>
-                            <h5 class="card-title">Npr 10000000</h5><i class="fas fa-camera"></i>
+                    <div class=" ">
+                        <!-- <span>Total Balance</span>
+                            <h5 class="card-title">Checking Account</h5> -->
+                        <!-- <i class="fas fa-camera"></i> -->
+                        <select name="" id="" class="form-select bg-dark text-light">
+                            <option selected>Checking Amount</option>
+                            <option value="">Option1</option>
+                            <option value="">Option2</option>
+                            <option value="">Option3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-12  ">
+                    <div class="bg-dark text-light">
+                        <div class="mx-3  ">
+                            <div class="my-4">
 
-                            <p class="card-text"><span>Income</span>0</p>
-                            <p>
-                                <span>expenses</span>2000
-                            </p>
+                                <h6 class="my-4 py-2">Checking Account</h6>
+                            </div>
+
+                            <span class="my-2">Balance</span>
+
+                            <h4 class="my-4">USD 10,000.00</h4>
+                            <!-- <h5 class="fas fa-camera"></h5> -->
+                            <hr>
+
+                            <span>IBAN</span>
+                            <p>ab11 0000 0000 1111 1111</p>
+
+                            <span>Account owner</span>
+                            <br>
+                            <span>Anish Pokharel</span>
+                        </div>
+
+                    </div>
+                    <div class="bg-info py-2 text-center">
+
+
+                        <a (click)="shareIban()">Share IBAN</a>
+
+                    </div>
+                    <div class="bg-warning py-2 text-center">
+                        Request Payment
+                    </div>
+
+                </div>
+                <div class="col-sm-12 my-3">
+                    <div class="bg-info ">
+
+                        <div class="d-flex justify-content-between my-1">
+                            <span class=" my-2 py-2 px-2">Saved Beneficiaries</span>
+                            <span  class=" my-2 py-2" class=" my-2 py-2 px-2" >View All</span>
+                        </div>
+                        <div>
+                            <div class="addsection row">
+                                <div class="col-lg-12">
+
+                                <div class=" mx-2 my-2 d-flex">
+                                    <div  class="bg-dark rounded-circle" style="height: 40px; width: 40px;" > 
+                                        <i class="text-light align-center fa-solid fa-plus"></i></div>
+                                    <div class="mx-2">
+
+                                        <img class="rounded-circle" src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"
+                                        alt="" style="height: 40px; width: 40px;" srcset="">
+                                    </div>
+                                    <div class="mx-2">
+
+                                        <img class="rounded-circle" src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"
+                                        alt="" style="height: 40px; width: 40px;" srcset="">
+                                    </div>
+                                    <div>
+
+                                        <img class="rounded-circle" src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg"
+                                        alt="" style="height: 40px; width: 40px;" srcset="">
+                                    </div>
+                                </div>
+                             
+                            </div>
+                        </div>
+
                         </div>
                     </div>
+
                 </div>
 
             </div>
         </div>
         <div class="col-lg-9">
             <h5>Transfer To </h5>
-            <span> Own Account </span>
-            <span> Other Account </span>
+            <div class="my-3">
 
-            <div class="row">
+                <span class=""> Own Account </span>
+                <span class="mx-3"> Other Account </span>
+            </div>
+
+            <div class="row my-3">
                 <form [formGroup]="formData" (submit)="sendMoney()">
+                    <label>Beneficiary </label>
                     <div class="col-lg-12">
-                        <label>Beneficiary </label>
+                        <input class="col-lg-11" type="text" placeholder="IBAN*" formControlName="beneficiary">
+                    </div>
+                    <br>
+                    <div class="col-lg-12">
+                        <input class="col-lg-11" type="text" placeholder="Amount*" formControlName="amount">
+                    </div>
+                    <br>
+                    <div class="col-lg-12">
+                        <input class="col-lg-11" type="date" placeholder="Date*" formControlName="date">
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <label for="">Other data</label>
                         <br>
-                        <input class="col-lg-12" type="text" placeholder="IBAN*" formControlName="beneficiary">
+                        <div class="col-lg-6">
+                            <input class="col-lg-10" type="text" placeholder="Transfer Purpose*"
+                                formControlName="transferPurpose">
+                        </div>
+                        <br>
+
+                        <div class="col-lg-6">
+                            <input class="col-lg-10" type="text" placeholder="Beneficiary's Name*"
+                                formControlName="beneficiaryName">
+                        </div>
+                        <br>
+
+                        <div class="col-lg-6 my-4">
+                            <input type="text" class="col-lg-10" placeholder="Beneficiary's email*"
+                                formControlName="beneficiaryEmail">
+                            <br>
+                        </div>
+                        <br>
+
+                        <div class="col-lg-6 my-4">
+                            <input type="text" class="col-lg-10" placeholder="Payer's Reference*"
+                                formControlName="payersReference">
+                        </div>
+                        <div class="col-lg-12 my-2">
+                            <input type="text" class="col-lg-11" placeholder="Information for beneficiary*"
+                                formControlName="beneficiaryInfo">
+                        </div>
+                        <br>
                     </div>
+
                     <br>
-                    <div class="col-lg-12">
-                        <input class="col-lg-12" type="text" placeholder="amount  NPR1000*" formControlName="amount">
-                    </div>
-                    <br>
-                    <div class="col-lg-12">
-                        <input class="col-lg-12" type="date" placeholder="date*" formControlName="date">
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <input class="col-lg-12" type="text" placeholder="transferpurpose*"
-                                formControlName="transferpurpose">
-                        </div>
-                        <div class="col-lg-6">
-                            <input class="col-lg-12" type="text" placeholder="beneficiary*"
-                                formControlName="beneficiarymname">
-                        </div>
-                        <div class="col-lg-6">
-                            <input type="text" class="col-lg-12" placeholder="beneficiaryemail*"
-                                formControlName="beneficiaryemail">
-                        </div>
-                        <div class="col-lg-6">
-                            <input type="text" class="col-lg-12" placeholder="Information for beneficiary*"
-                                formControlName="beneficiaryinfo">
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Money</button>
+                    <button type="submit" class="btn btn-primary col-lg-11">Continue</button>
                 </form>
             </div>
 
