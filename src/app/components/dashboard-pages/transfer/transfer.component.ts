@@ -13,7 +13,7 @@ export class TransferComponent implements OnInit{
 formData!: FormGroup;
 constructor( private fb:FormBuilder){}
   ngOnInit(): void {
-    this,this.transferMoney()
+    this.transferMoney()
   
 }
 sendMoney(){
