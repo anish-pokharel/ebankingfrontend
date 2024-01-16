@@ -1,19 +1,24 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { SettingServiceService } from './settingService/setting-service.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-settings',
   standalone: true,
-  imports: [FormsModule, CommonModule, ReactiveFormsModule],
+  imports: [FormsModule, CommonModule, ReactiveFormsModule,HttpClientModule],
   templateUrl: './settings.component.html',
-  styleUrl: './settings.component.css'
+  styleUrl: './settings.component.css',
+  providers:[SettingServiceService]
 })
 export class SettingsComponent implements OnInit {
 settingData!: FormGroup ;
 constructor(
-  private fb:FormBuilder
+  private fb:FormBuilder,
+  private settingService :SettingServiceService
 ){}
+// httpClient = inject(HttpClient)
 
   ngOnInit(): void {
     this.settingDataVal();
@@ -39,6 +44,9 @@ constructor(
    if(this.settingData.valid){
     const settingDataValue= this.settingData.value;
     console.log(settingDataValue);
+    this.settingService.postuserSettingData(settingDataValue).subscribe((value)=>{
+      console.log(value);
+    })
    }
    else{}
   }
